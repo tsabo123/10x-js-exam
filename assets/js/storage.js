@@ -3,6 +3,7 @@ export const KEYS = {
   session: "crm_session",
   clients: "crm_clients",
   theme: "crm_theme",
+  
 };
 
 export function readJson(key, fallback) {
@@ -47,6 +48,6 @@ export const clearSession = () => {
 export const getClients = () => readJson(KEYS.clients, []);
 export const saveClients = (clients) => writeJson(KEYS.clients, clients);
 
-export function resetClientsData() {
+export function resetDemoData() {
   localStorage.removeItem(KEYS.clients);
 }

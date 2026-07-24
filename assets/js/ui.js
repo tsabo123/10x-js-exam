@@ -28,7 +28,7 @@ export function toast(message) {
   item.className = "toast";
   item.textContent = message;
   host.append(item);
-  setTimeout(() => item.remove(), 2600);
+  setTimeout(() => item.remove(), 3000);
 }
 
 export function applyTheme() {

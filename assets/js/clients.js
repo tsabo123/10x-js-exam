@@ -178,6 +178,7 @@ function getVisibleClients() {
 
 function renderClients() {
   const visible = getVisibleClients();
+  console.log(visible);
   state.textContent = visible.length ? `${visible.length} client(s) shown` : "No clients match the current filters.";
   table.innerHTML = visible
     .map(

@@ -87,9 +87,9 @@ function mapApiUser(user, index) {
 }
 
 
-async function requestJson(url, options) {
+async function requestJson(url) {
 
-  const response = await fetch(url, options);
+  const response = await fetch(url);
 
   if (!response.ok) {
     throw new Error(`Request failed with ${response.status}`);

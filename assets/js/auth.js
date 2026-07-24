@@ -8,7 +8,8 @@ function redirectToLogin() {
 
 function findUserBySession(session) {
   const users = getUsers() || [];
-
+if (!users) return [] ;
+console.log(users);
   return users.find(
     user => user.id === session.userId
   );
