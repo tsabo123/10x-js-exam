@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10X CRM | Profile</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="logo" href="dashboard.html">10X CRM</a>
+        <nav>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="clients.html">Clients</a>
+          <a class="active" href="profile.html">Profile</a>
+        </nav>
+        <button id="themeToggle" class="ghost-btn" type="button">Toggle theme</button>
+        <button id="logoutBtn" class="ghost-btn danger" type="button">Log out</button>
+      </aside>
+      <main class="main-content">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">Account settings</p>
+            <h1>Profile</h1>
+          </div>
+        </header>
+
+        <section class="split-layout">
+          <form id="profileForm" class="panel form-panel" novalidate>
+            <h2>Personal details</h2>
+            <label>Full name<input id="profileName" required /><span class="field-error" data-error-for="profileName"></span></label>
+            <label>Email<input id="profileEmail" type="email" required /><span class="field-error" data-error-for="profileEmail"></span></label>
+            <label>Phone<input id="profilePhone" required /><span class="field-error" data-error-for="profilePhone"></span></label>
+            <label>Company<input id="profileCompany" required /><span class="field-error" data-error-for="profileCompany"></span></label>
+            <button class="primary-btn" type="submit">Save profile</button>
+          </form>
+
+          <form id="passwordForm" class="panel form-panel" novalidate>
+            <h2>Security</h2>
+            <label>Current password<input id="currentPassword" type="password" required /><span class="field-error" data-error-for="currentPassword"></span></label>
+            <label>New password<input id="newPassword" type="password" required /><span class="field-error" data-error-for="newPassword"></span></label>
+            <label>Confirm new password<input id="confirmNewPassword" type="password" required /><span class="field-error" data-error-for="confirmNewPassword"></span></label>
+            <button class="primary-btn" type="submit">Change password</button>
+            <button id="resetDataBtn" class="ghost-btn danger" type="button">Reset demo data</button>
+          </form>
+        </section>
+      </main>
+    </div>
+    <div id="toastHost" class="toast-host"></div>
+    <script type="module" src="assets/js/profile.js"></script>
+  </body>
+</html>

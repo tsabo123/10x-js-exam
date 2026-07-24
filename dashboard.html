@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10X CRM | Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="logo" href="dashboard.html">10X CRM</a>
+        <nav>
+          <a class="active" href="dashboard.html">Dashboard</a>
+          <a href="clients.html">Clients</a>
+          <a href="profile.html">Profile</a>
+        </nav>
+        <button id="themeToggle" class="ghost-btn" type="button">Toggle theme</button>
+        <button id="logoutBtn" class="ghost-btn danger" type="button">Log out</button>
+      </aside>
+      <main class="main-content">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">Sales command center</p>
+            <h1 id="welcomeTitle">Dashboard</h1>
+          </div>
+          <div class="clock" id="liveClock">--:--:--</div>
+        </header>
+
+        <section class="stats-grid" id="statsGrid"></section>
+
+        <section class="split-layout">
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>Pipeline</h2>
+              <a href="clients.html">Manage clients</a>
+            </div>
+            <div class="pipeline-bars" id="pipelineBars"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>Recent clients</h2>
+            </div>
+            <div class="recent-list" id="recentClients"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="toastHost" class="toast-host"></div>
+    <script type="module" src="assets/js/dashboard.js"></script>
+  </body>
+</html>

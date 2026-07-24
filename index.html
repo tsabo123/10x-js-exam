@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10X CRM | Login</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="brand-panel">
+        <p class="eyebrow">10X CRM</p>
+        <h1>Manage every customer conversation from one focused workspace.</h1>
+        <p>Sign in to view your pipeline, contacts, reminders, and sales notes.</p>
+      </section>
+
+      <section class="auth-card" aria-labelledby="login-title">
+        <h2 id="login-title">Welcome back</h2>
+        <form id="loginForm" novalidate>
+          <label>
+            Email
+            <input id="loginEmail" name="email" type="email" autocomplete="email" required />
+            <span class="field-error" data-error-for="loginEmail"></span>
+          </label>
+          <label>
+            Password
+            <input id="loginPassword" name="password" type="password" autocomplete="current-password" required />
+            <span class="field-error" data-error-for="loginPassword"></span>
+          </label>
+          <label class="checkbox-row">
+            <input id="rememberMe" type="checkbox" checked />
+            Remember me
+          </label>
+          <p class="form-error" id="loginError" aria-live="polite"></p>
+          <button type="submit" class="primary-btn">Log in</button>
+        </form>
+        <p class="auth-switch">New here? <a href="signup.html">Create an account</a></p>
+      </section>
+    </main>
+    <script type="module" src="assets/js/login.js"></script>
+  </body>
+</html>

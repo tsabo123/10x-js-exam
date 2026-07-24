@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10X CRM | Sign Up</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="brand-panel">
+        <p class="eyebrow">Start selling smarter</p>
+        <h1>Create your 10X CRM account and keep your clients organized.</h1>
+        <p>Your data is saved locally in this demo, so it survives refreshes in the same browser.</p>
+      </section>
+
+      <section class="auth-card" aria-labelledby="signup-title">
+        <h2 id="signup-title">Create account</h2>
+        <form id="signupForm" novalidate>
+          <label>
+            Full name
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+            <span class="field-error" data-error-for="fullName"></span>
+          </label>
+          <label>
+            Email
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <span class="field-error" data-error-for="email"></span>
+          </label>
+          <label>
+            Phone
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+995 555 123 456" required />
+            <span class="field-error" data-error-for="phone"></span>
+          </label>
+          <label>
+            Company
+            <input id="company" name="company" type="text" required />
+            <span class="field-error" data-error-for="company"></span>
+          </label>
+          <label>
+            Password
+            <input id="password" name="password" type="password" autocomplete="new-password" required />
+            <span class="strength-meter" id="strengthMeter">Password strength: weak</span>
+            <span class="field-error" data-error-for="password"></span>
+          </label>
+          <label>
+            Confirm password
+            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required />
+            <span class="field-error" data-error-for="confirmPassword"></span>
+          </label>
+          <button type="submit" class="primary-btn">Sign up</button>
+        </form>
+        <p class="auth-switch">Already registered? <a href="index.html">Log in</a></p>
+      </section>
+    </main>
+    <script type="module" src="assets/js/signup.js"></script>
+  </body>
+</html>
