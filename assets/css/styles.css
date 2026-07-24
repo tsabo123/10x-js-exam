@@ -102,7 +102,7 @@ p {
 .brand-panel {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   padding: clamp(2rem, 5vw, 4rem);
   color: white;
   background: linear-gradient(180deg, rgba(14, 26, 34, 0.2), rgba(14, 26, 34, 0.78));
