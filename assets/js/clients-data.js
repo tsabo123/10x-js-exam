@@ -1,7 +1,7 @@
 import { getClients, saveClients } from "./storage.js";
 import { STATUSES } from "./ui.js";
 
-const API_URL = "https://jsonplaceholder.typicode.com/users";
+const API_URL = "https://dummyjson.com/users?limit=30";
 
 const CLIENT_STATUSES = [
   "new",
@@ -72,10 +72,9 @@ function buildSeedClients() {
 
 
 function mapApiUser(user, index) {
-
   return createClient(
     {
-      name: user.name,
+      name: `${user.firstName} ${user.lastName}`,
       email: user.email.toLowerCase(),
       phone: user.phone,
       company: user.company.name,
@@ -83,58 +82,45 @@ function mapApiUser(user, index) {
     },
     index
   );
-
 }
 
 
-async function requestJson(url) {
-
-  const response = await fetch(url);
+async function requestJson(url, options) {
+  const response = await fetch(url, options);
 
   if (!response.ok) {
     throw new Error(`Request failed with ${response.status}`);
   }
 
   const text = await response.text();
-
   return text ? JSON.parse(text) : {};
-
 }
-
 
 async function fetchClientsFromApi() {
 
   const response = await requestJson(API_URL);
 
-  return response.map(mapApiUser);
+return response.users.map(mapApiUser);
 
 }
 
 
 export async function loadClients() {
+  const cachedClients = getClients();
+
+  if (cachedClients && cachedClients.length) {
+    return cachedClients;
+  }
 
   try {
     const clients = await fetchClientsFromApi();
-
     saveClients(clients);
-
     return clients;
-
   } catch {
-
-    const cachedClients = getClients();
-
-    if (cachedClients) {
-      return cachedClients;
-    }
-
     const fallbackClients = buildSeedClients();
-
     saveClients(fallbackClients);
-
     return fallbackClients;
   }
-
 }
 
 

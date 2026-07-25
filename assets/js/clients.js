@@ -176,22 +176,42 @@ function getVisibleClients() {
   return visible;
 }
 
+
 function renderClients() {
   const visible = getVisibleClients();
   console.log(visible);
-  state.textContent = visible.length ? `${visible.length} client(s) shown` : "No clients match the current filters.";
+
+  state.textContent = visible.length
+    ? `${visible.length} client(s) shown`
+    : "No clients match the current filters.";
+
   table.innerHTML = visible
     .map(
       (client) => `<tr>
-        <td><strong>${client.name}</strong><br><small>${client.email}</small></td>
+        <td>
+          <strong>${client.name}</strong><br>
+          <small>${client.email}</small>
+        </td>
         <td>${client.company}</td>
-        <td><button class="status" data-action="cycle" data-id="${client.id}">${titleCase(client.status)}</button></td>
+        <td>
+          <button class="status" data-action="cycle" data-id="${client.id}">
+            ${titleCase(client.status)}
+          </button>
+        </td>
         <td>${money(client.value)}</td>
         <td>${client.city}</td>
-        <td class="row-actions">
-          <button class="ghost-btn" data-action="details" data-id="${client.id}">Details</button>
-          <button class="ghost-btn" data-action="edit" data-id="${client.id}">Edit</button>
-          <button class="ghost-btn danger" data-action="delete" data-id="${client.id}">Delete</button>
+        <td>
+          <div class="row-actions">
+            <button class="ghost-btn" data-action="details" data-id="${client.id}">
+              Details
+            </button>
+            <button class="ghost-btn" data-action="edit" data-id="${client.id}">
+              Edit
+            </button>
+            <button class="ghost-btn danger" data-action="delete" data-id="${client.id}">
+              Delete
+            </button>
+          </div>
         </td>
       </tr>`
     )
