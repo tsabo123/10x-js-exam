@@ -36,7 +36,7 @@ export function requireAuth() {
 
 export function isEmail(value) {
 
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);// regex for email validation
 
 }
 

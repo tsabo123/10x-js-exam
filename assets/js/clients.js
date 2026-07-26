@@ -116,28 +116,36 @@ document.getElementById("noteForm").addEventListener("submit", (event) => {
   toast("Note added.");
 });
 
+
 document.getElementById("reminderForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const textInput = document.getElementById("reminderText");
   const timeInput = document.getElementById("reminderTime");
   const text = textInput.value.trim();
   const dueAt = new Date(timeInput.value).getTime();
+
+  // შემოწმება: დრო მითითებული უნდა იყოს და იყოს მომავალში
   if (!text || !selectedClientId || Number.isNaN(dueAt) || dueAt <= Date.now()) {
     toast("Choose a future reminder time.");
     return;
   }
+
   const reminder = { id: crypto.randomUUID(), text, dueAt, done: false };
+
+  // კლიენტთან შეხსენების მიბმა და შენახვა
   clients = clients.map((client) =>
     client.id === selectedClientId ? { ...client, reminders: [reminder, ...(client.reminders || [])] } : client
   );
   saveClients(clients);
+
+  // ტაიმერის ჩართვა მითითებულ დროზე
   scheduleReminder(selectedClientId, reminder);
+
   textInput.value = "";
   timeInput.value = "";
   renderDetails(selectedClientId);
-  toast("Reminder scheduled.");
+  toast("Reminder scheduled for the specified time!");
 });
-
 document.getElementById("callToggle").addEventListener("click", () => {
   if (callInterval) {
     clearInterval(callInterval);
