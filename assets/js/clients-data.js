@@ -33,6 +33,7 @@ const apiNames = [
   ["Irakli Tsereteli", "Batumi", "SeaLine Tours"],
   ["Maka Gvazava", "Poti", "PortPro"],
   ["Vakho Nadiradze", "Tbilisi", "Urban Build"]
+  
 ];
 // Assigns a status to each client in a cycle (repeats when it reaches the end)
 // Example (with 5 statuses):
