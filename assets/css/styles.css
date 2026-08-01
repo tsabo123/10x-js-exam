@@ -513,3 +513,22 @@ menu {
 body {
   transition: none;
 }
+/* =========================
+   Buttons
+========================= */
+
+.primary-btn,
+.ghost-btn,
+.icon-btn {
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.ghost-btn:hover,
+.icon-btn:hover {
+  transform: translateY(-2px);
+}
