@@ -532,3 +532,20 @@ body {
 .icon-btn:hover {
   transform: translateY(-2px);
 }
+/* =========================
+   Cards
+========================= */
+
+.stat-card,
+.panel,
+.client-mini,
+.detail-card {
+  transition: transform .15s ease;
+}
+
+.stat-card:hover,
+.panel:hover,
+.client-mini:hover,
+.detail-card:hover {
+  transform: translateY(-2px);
+}
