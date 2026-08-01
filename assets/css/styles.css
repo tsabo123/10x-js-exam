@@ -14,15 +14,18 @@
 }
 
 [data-theme="dark"] {
-  --bg: #121619;
-  --surface: #1b2227;
-  --surface-2: #253034;
-  --ink: #f3f6f8;
-  --muted: #a9b7c2;
-  --line: #34424a;
-  --brand: #5bc0be;
-  --brand-2: #f2a65a;
-  --shadow: 0 16px 45px rgba(0, 0, 0, 0.28);
+  --bg: #151a1f;
+  --surface: #202830;
+  --surface-2: #2b353e;
+  --ink: #f4f7fa;
+  --muted: #b1bcc7;
+  --line: #3c4853;
+  --brand: #4ecdc4;
+  --brand-2: #f4a261;
+  --ok: #2ecc71;
+  --warn: #f4b942;
+  --bad: #e76f51;
+  --shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -500,5 +503,154 @@ menu {
   .page-header {
     align-items: stretch;
     flex-direction: column;
+  }
+}
+
+/* =========================
+   Fast & Smooth UI Effects
+========================= */
+
+/* Dark / Light mode სწრაფად შეიცვალოს */
+body {
+  transition: none;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.primary-btn,
+.ghost-btn,
+.icon-btn {
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.ghost-btn:hover,
+.icon-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Cards
+========================= */
+
+.stat-card,
+.panel,
+.client-mini,
+.detail-card {
+  transition: transform .15s ease;
+}
+
+.stat-card:hover,
+.panel:hover,
+.client-mini:hover,
+.detail-card:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Sidebar
+========================= */
+
+.sidebar nav a {
+  transition: padding .15s ease, color .15s ease, background .15s ease;
+}
+
+.sidebar nav a:hover {
+  padding-left: 1rem;
+}
+
+
+/* =========================
+   Inputs
+========================= */
+
+input,
+select,
+textarea {
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, .15);
+}
+
+
+/* =========================
+   Table Hover
+========================= */
+
+tbody tr {
+  transition: background-color .15s ease;
+}
+
+tbody tr:hover {
+  background: var(--surface-2);
+}
+
+
+/* =========================
+   Status Badge
+========================= */
+
+.status {
+  transition: transform .15s ease;
+}
+
+.status:hover {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   Toast
+========================= */
+
+.toast {
+  animation: toastIn .25s ease;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   Modal
+========================= */
+
+dialog[open] {
+  animation: modalIn .2s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
