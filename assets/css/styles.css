@@ -577,3 +577,27 @@ textarea:focus {
   border-color: var(--brand);
   box-shadow: 0 0 0 3px rgba(78, 205, 196, .15);
 }
+/* =========================
+   Table Hover
+========================= */
+
+tbody tr {
+  transition: background-color .15s ease;
+}
+
+tbody tr:hover {
+  background: var(--surface-2);
+}
+
+/* =========================
+   Status Badge
+========================= */
+
+.status {
+  transition: transform .15s ease;
+}
+
+.status:hover {
+  transform: scale(1.05);
+}
+
