@@ -560,3 +560,20 @@ body {
 .sidebar nav a:hover {
   padding-left: 1rem;
 }
+/* =========================
+   Inputs
+========================= */
+
+input,
+select,
+textarea {
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, .15);
+}
