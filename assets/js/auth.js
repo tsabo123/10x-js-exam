@@ -72,13 +72,17 @@ export function passwordScore(password = "") {
   return rules.filter(Boolean).length;
 
 }
-
-
+/**
+ * Returns a human-readable strength label ("weak", "medium", or "strong") 
+ * based on the calculated password score.
+ * @param {string} password - The password to evaluate.
+ * @returns {string} The strength label.
+ */
 export function passwordLabel(password) {
-
+// Get numerical score (0 to 4) from the password score function
   const score = passwordScore(password);
 
-
+// Map each score to its corresponding strength level
   const labels = {
     0: "weak",
     1: "weak",
@@ -86,7 +90,7 @@ export function passwordLabel(password) {
     3: "medium",
     4: "strong"
   };
-
+// Return the matching label, default to "weak" if score is missing
 
   return labels[score] || "weak";
 
