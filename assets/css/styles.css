@@ -549,3 +549,14 @@ body {
 .detail-card:hover {
   transform: translateY(-2px);
 }
+/* =========================
+   Sidebar
+========================= */
+
+.sidebar nav a {
+  transition: padding .15s ease, color .15s ease, background .15s ease;
+}
+
+.sidebar nav a:hover {
+  padding-left: 1rem;
+}
