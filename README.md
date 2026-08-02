@@ -1,5 +1,6 @@
 # 10X CRM
 
+🔗 Live Demo: https://10x-js-exam.vercel.app
 10X CRM is a browser-based customer relationship management demo for sales managers. It includes registration, login, a protected dashboard, a client database, profile settings, local persistence, and a clean responsive interface.
 
 ## How to run
